@@ -1,0 +1,22 @@
+{{ define "index"}}
+
+{{ template "header"}}
+
+  <main class="px-3">
+    <h1>Раз ...</h1>
+    <p class="lead">Развал? Развал! Развал ...</p>
+
+    {{ range . }}
+    <div class="alert alert-danger">
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Anons }}</p>
+      <a href="/post/{{ .Id}}" class="btn btn-danger">Читать</a>
+    </div>  
+    {{ else }}
+    <p class="lead">Статей нет!</p>
+    {{ end }}
+  </main>
+
+{{ template "footer" }}
+
+{{ end }}
